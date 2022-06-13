@@ -1,17 +1,20 @@
 #include "main.h"
 
 /**
- *  -length of a string
- *  Return :int that means our ans is right
+ * _strlen  - length of a string
+ * @s: A pointer to an int
+ *
+ * Return: int on success 1
  */
 
 int _strlen(char *s)
 {
 	int u;
+
 	u = 0;
 	while (s[u] != '\0')
 	{
 		u++;
 	}
-	return(u);
+	return (u);
 }
