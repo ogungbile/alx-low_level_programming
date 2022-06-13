@@ -1,1 +1,1 @@
-This repo/project is about elementary of C programming
+These are tasks on Debugging
