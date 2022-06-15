@@ -1,5 +1,6 @@
 #include "main.h"
-/** puts2 - prints every other character of a string
+/**
+ * puts2 - prints every other character of a string
  * @s: A pointer to a char that will be changed
  *
  * Return: void which means our answer is correct
