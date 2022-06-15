@@ -5,7 +5,7 @@
  *
  *  Return: void which means our answer is correct
  */
-void _puts(char *str)
+void _puts(char *s)
 {
 	int i;
 
