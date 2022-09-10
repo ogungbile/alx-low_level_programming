@@ -3,7 +3,6 @@
 #include <time.h>
 /**
  *  main - Prints the last digit
- *  if it is > than 5, < than 6, or 0.
  *
  *   Return: Always 0.
  */
