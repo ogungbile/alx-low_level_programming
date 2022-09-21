@@ -1,21 +1,35 @@
 #include "main.h"
+
 /**
- *  _strcat -> this function is merging string
- *  @dest: first string
- *  @src: second string
- *  Return: a string
+ * _strcat - check the code for Holberton School students.
+ * @dest: Destination string
+ * @src: String for adding
+ * Return: Always 0.
  */
 char *_strcat(char *dest, char *src)
 {
-	int lenh = 0, i;
+	int i, j, k, num;
 
-	while (dest[lenh])
-		lenh++;
-	for (i = 0; src[i] != '\0'; i++)
+	i = 0;
+	while (dest[i] != '\0')
+		i++;
+
+	j = 0;
+	while (src[j] != '\0')
+		j++;
+
+	if (i < j)
+		num = j;
+	else if (i >= j)
+		num = i;
+
+	for (k = 0; k < num; k++)
 	{
-		dest[lenh] = src[i];
-		lenh += 1;
+		if (num == j)
+			dest[k + num - 1] = src[k];
+		else
+			dest[k + num] = src[k];
 	}
-	dest[lenh] = '\0';
+
 	return (dest);
 }
