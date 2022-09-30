@@ -1,0 +1,1 @@
+This project is about how to use argument passed to your program
