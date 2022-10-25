@@ -1,26 +1,56 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
- * print_listint_safe - prints a list
- * @head: address of pointer to first node
+ * print_listint_safe - function that prints a listint_t linked list.
+ * @head: pointer to head of a list.
  *
- * Return: address of head
+ * Return: Length of list (INT)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	if (head)
+	const listint_t *slow_p = head ,*fast_p = head;
+	size_t ele = 0;
+	int is_loop = 0;
+
+	while (slow_p && fast_p && fast_p->next)
 	{
-		printf("[%p] %d\n", (void *)head, head->n);
-		if (head->next < head)
+		if (!(fast_p->next->next))
+			break;
+		slow_p = slow_p->next;
+		fast_p = fast_p->next->next;
+		if (slow_p == fast_p)
 		{
-			return (1 + print_listint_safe(head->next));
+			slow_p = slow_p->next;
+			is_loop = 1;
+			break;
 		}
-		else
+	}
+
+	if (!is_loop)
+	{
+		while (head)
 		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			return (1);
+			ele++;
+			printf("[%p] %d\n", (void *)head, head->n);
+			head = head->next;
+		}
+		return (ele);
+	}
+
+	while (head)
+	{
+		ele++;
+		if (head == slow_p)
+		{
+			printf("[%p] %d\n", (void *)head, head->n);
+			printf("-> [%p] %d\n", (void *)head, head->next->n);
+			exit(98);
 		}
 
+		printf("[%p] %d\n", (void *)head, head->n);
+		head = head->next;
 	}
 	return (0);
 }
+
