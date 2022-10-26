@@ -6,6 +6,7 @@
  *
  * Return: no return.
  */
+
 void free_listp2(listp_t **head)
 {
 	listp_t *temp;
@@ -13,6 +14,7 @@ void free_listp2(listp_t **head)
 
 	if (head != NULL)
 	{
+
 		curr = *head;
 		while ((temp = curr) != NULL)
 		{
